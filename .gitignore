@@ -1,0 +1,8 @@
+*.class
+.idea
+.bsp
+projects
+project/target
+target
+.DS_Store
+lightbend.sbt

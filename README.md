@@ -5,7 +5,7 @@ Sample to demonstrate that we can reduce the time taken by the `alpakka.kafka.pr
 # Lightbend Credentials
 
 You can access the commercial Lightbend Platform modules by providing a personalized resolver.<br/>
-How to set up your Lightbend Platform Credentials:
+How to set up your Lightbend Platform Credentials:<br/>
 https://www.lightbend.com/account/lightbend-platform/credentials
 
 # Run the sample

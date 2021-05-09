@@ -20,7 +20,7 @@ docker-compose up
 Generate test data in Kafka:
 
 ```
-sbt "runMain com.mchajii.sample.BankTransactionsProducer"
+sbt "runMain com.mchajii.sample.BankTransactionProducer"
 ```
 Start the transactional stream:
 

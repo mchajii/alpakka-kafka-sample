@@ -20,6 +20,7 @@ import org.apache.kafka.clients.producer.ProducerRecord
 import org.apache.kafka.common.serialization.{StringDeserializer, StringSerializer}
 import org.slf4j.LoggerFactory
 import slick.jdbc.H2Profile.api._
+import com.lightbend.cinnamon.akka.stream.CinnamonAttributes._
 
 final case class Balance(accountNumber: String, balance: Int)
 
@@ -96,6 +97,7 @@ object BalanceStream extends App {
               partitionOffset
             )
           }
+          .instrumentedPartial(name = "BalanceStream", traceable = true)
           .via(Transactional.flow(producerSettings, "transactionalId"))
       }
       .to(Sink.ignore)

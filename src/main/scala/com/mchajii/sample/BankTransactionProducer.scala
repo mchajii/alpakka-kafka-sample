@@ -12,7 +12,7 @@ import org.apache.kafka.clients.producer.ProducerRecord
 import org.apache.kafka.common.serialization.StringSerializer
 import org.slf4j.LoggerFactory
 
-object BankTransactionsProducer extends App {
+object BankTransactionProducer extends App {
 
   private val log = LoggerFactory.getLogger(getClass)
 
@@ -24,7 +24,7 @@ object BankTransactionsProducer extends App {
     ProducerSettings(system, new StringSerializer, new StringSerializer)
       .withBootstrapServers("localhost:9092")
 
-  Source(1 to 500)
+  Source(1 to 1500)
     .map(_ =>
       Seq(
         BankTransaction("BE79989744181449", rnd.between(0, 100)),
